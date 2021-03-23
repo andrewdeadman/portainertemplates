@@ -11,8 +11,8 @@
             ],
             "logo": "https://www.flooid.com/icons/icon-48x48.png?v=fbf397f8e42caf43e3436e42dcbf544b",
             "repository": {
-              "url": "https://raw.githubusercontent.com/andrewdeadman/portainertemplates/main/stacks",
-              "stackfile": "flooid-core1/docker-stack.yml"
+              "url": "https://github.com/andrewdeadman/portainertemplates",
+              "stackfile": "stacks/flooid-core1/docker-stack.yml"
             },
             "env": [
               {
@@ -24,31 +24,31 @@
                 "name": "DB_BUILD_ANT_TARGETS",
                 "label": "DB Ant Build Targets",
                 "description": "Ant targets to use to build the databases - comma separated",
-                "set": "build-database,build-database-reporting"
+                "default": "build-database,build-database-reporting"
               },
               {
                 "name": "TOMCAT_MEM_MIN",
                 "label": "Tomcat Memory - Min",
                 "description": "Min Memory setting for the Tomcat JVM",
-                "set": "256m"
+                "default": "256m"
               },
               {
                 "name": "TOMCAT_MEM_MAX",
                 "label": "Tomcat Memory - Max",
                 "description": "Max Memory setting for the Tomcat JVM",
-                "set": "512m"
+                "default": "512m"
               },
               {
                 "name": "POS_CLIENT_HARDWARE_ID",
                 "label": "POS Client - Hardware ID",
                 "description": "The DEVC_HARDWARE_ID to use for the POS application",
-                "set": "posclient1"
+                "default": "posclient1"
               },
               {
                 "name": "POS_CLIENT_RESOLUTION",
                 "label": "POS Client - Resolution",
                 "description": "The resolution to use for the VNC window - e.g. 2390x768",
-                "set": "2390x768"
+                "default": "2390x768"
               }
             ]
         }
