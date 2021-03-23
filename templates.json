@@ -14,6 +14,7 @@
               "url": "https://github.com/andrewdeadman/portainertemplates",
               "stackfile": "stacks/flooid-core1/docker-stack.yml"
             },
+	    "restart_policy": "no"
             "env": [
               {
                 "name": "PROJECT_FOLDER",
