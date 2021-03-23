@@ -1,0 +1,46 @@
+{
+	"version": "2",
+	"templates": [
+        {
+            "type": 3,
+            "title": "Flooid Core - DDS + DB2 POS",
+            "description": "Flooid Core - DDS + DB2 POS",
+            "platform": "linux",
+            "categories": [
+                "Other"
+            ],
+            "logo": "https://www.flooid.com/icons/icon-48x48.png?v=fbf397f8e42caf43e3436e42dcbf544b",
+            "repository": {
+              "url": "http://192.168.86.34:9002/templates",
+              "stackfile": "stacks/flooid-core1/docker-stack.yml"
+            },
+            "env": [
+              {
+                "name": "PROJECT_FOLDER",
+                "label": "Project Folder",
+                "description": "Folder containing the required files for the project - used in the Volume Mounts"
+              },
+              {
+                "name": "TOMCAT_MEM_MIN",
+                "label": "Tomcat Memory - Min",
+                "description": "Min Memory setting for the Tomcat JVM"
+              },
+              {
+                "name": "TOMCAT_MEM_MAX",
+                "label": "Tomcat Memory - Max",
+                "description": "Max Memory setting for the Tomcat JVM"
+              },
+              {
+                "name": "POS_CLIENT_HARDWARE_ID",
+                "label": "POS Client - Hardware ID",
+                "description": "The DEVC_HARDWARE_ID to use for the POS application"
+              },
+              {
+                "name": "POS_CLIENT_RESOLUTION",
+                "label": "POS Client - Resolution",
+                "description": "The resolution to use for the VNC window - e.g. 2390x768"
+              }
+            ]
+        }
+    ]
+}
