@@ -23,25 +23,25 @@
               {
                 "name": "TOMCAT_MEM_MIN",
                 "label": "Tomcat Memory - Min",
-                "description": "Min Memory setting for the Tomcat JVM"
+                "description": "Min Memory setting for the Tomcat JVM",
                 "set": "256m"
               },
               {
                 "name": "TOMCAT_MEM_MAX",
                 "label": "Tomcat Memory - Max",
-                "description": "Max Memory setting for the Tomcat JVM"
+                "description": "Max Memory setting for the Tomcat JVM",
                 "set": "512m"
               },
               {
                 "name": "POS_CLIENT_HARDWARE_ID",
                 "label": "POS Client - Hardware ID",
-                "description": "The DEVC_HARDWARE_ID to use for the POS application"
+                "description": "The DEVC_HARDWARE_ID to use for the POS application",
                 "set": "posclient1"
               },
               {
                 "name": "POS_CLIENT_RESOLUTION",
                 "label": "POS Client - Resolution",
-                "description": "The resolution to use for the VNC window - e.g. 2390x768"
+                "description": "The resolution to use for the VNC window - e.g. 2390x768",
                 "set": "2390x768"
               }
             ]
