@@ -21,6 +21,12 @@
                 "description": "Folder containing the required files for the project - used in the Volume Mounts"
               },
               {
+                "name": "DB_BUILD_ANT_TARGETS",
+                "label": "DB Ant Build Targets",
+                "description": "Ant targets to use to build the databases - comma separated",
+                "set": "build-database,build-database-reporting"
+              },
+              {
                 "name": "TOMCAT_MEM_MIN",
                 "label": "Tomcat Memory - Min",
                 "description": "Min Memory setting for the Tomcat JVM",
