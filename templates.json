@@ -11,7 +11,7 @@
             ],
             "logo": "https://www.flooid.com/icons/icon-48x48.png?v=fbf397f8e42caf43e3436e42dcbf544b",
             "repository": {
-              "url": "http://192.168.86.34:9002/templates",
+              "url": "https://raw.githubusercontent.com/andrewdeadman/portainertemplates/main/",
               "stackfile": "stacks/flooid-core1/docker-stack.yml"
             },
             "env": [
