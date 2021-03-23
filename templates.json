@@ -36,7 +36,7 @@
                 "name": "TOMCAT_MEM_MAX",
                 "label": "Tomcat Memory - Max",
                 "description": "Max Memory setting for the Tomcat JVM",
-                "default": "512m"
+                "default": "768m"
               },
               {
                 "name": "POS_CLIENT_HARDWARE_ID",
