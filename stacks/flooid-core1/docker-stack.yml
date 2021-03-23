@@ -6,7 +6,7 @@ services:
     container_name: ${PROJECT_FOLDER}_db2_centre
     command:
       - db2start
-    image: 'base_db2_11_ubuntu:2.0'
+    image: 'nexus.pcms.local:5000/vcs-base/base_db2_11_ubuntu:2.0'
     ports:
       - '8050:51000'
       - '922:22'
@@ -31,7 +31,7 @@ services:
     stdin_open: true
     tty: true
     container_name: ${PROJECT_FOLDER}_activemq
-    image: 'base_activemq:5.15.9-alpine'
+    image: 'nexus.pcms.local:5000/vcs-base/base_activemq:5.15.9-alpine'
     hostname: activemq
     ports:
       - '8161:8161'
@@ -42,7 +42,7 @@ services:
     stdin_open: true
     tty: true
     container_name: ${PROJECT_FOLDER}_tomcat_vbs
-    image: 'base_tomcat_vcs:3.0'
+    image: 'nexus.pcms.local:5000/vcs-base/base_tomcat_vcs:3.0'
     ports:
       - '923:22'
       - '9080:8080'
@@ -65,7 +65,7 @@ services:
     container_name: ${PROJECT_FOLDER}_pos
     command:
       - db2start
-    image: 'base_db2_11_ubuntu_pos:2.0'
+    image: 'nexus.pcms.local:5000/vcs-base/base_db2_11_ubuntu_pos:2.0'
     ports:
       - '5900:5900'
       - '924:22'
