@@ -1,0 +1,86 @@
+version: '2'
+services:
+  dbserver:
+    stdin_open: true
+    tty: true
+    container_name: ${PROJECT_FOLDER}_db2_centre
+    command:
+      - db2start
+    image: 'base_db2_11_ubuntu:2.0'
+    ports:
+      - '8050:51000'
+      - '922:22'
+    volumes:
+      - '/docker_resources/${PROJECT_FOLDER}/db:/db-resources'
+      - '/docker_resources/${PROJECT_FOLDER}/database_files:/db'
+    environment:
+      - DB2INST1_PASSWORD=pcmss3cr3t
+      - ROOT_PWD=pcmsadmin
+      - LICENSE=accept
+      - DATABASE_CORE_ZIP_FILE=/db-resources/beanstore-core.zip
+      - DATABASE_OVERRIDE_FOLDER=/db-resources/overrides/
+      - 'DATABASE_BUILD_COMMANDS=${DB_BUILD_ANT_TARGETS}'
+  mongodb:
+    stdin_open: true
+    tty: true
+    container_name: ${PROJECT_FOLDER}_mongodb
+    image: 'mongo:3.4.21'
+    ports:
+      - '27017:27017'
+  activemq:
+    stdin_open: true
+    tty: true
+    container_name: ${PROJECT_FOLDER}_activemq
+    image: 'base_activemq:5.15.9-alpine'
+    hostname: activemq
+    ports:
+      - '8161:8161'
+      - '8616:61616'
+      - '8613:61613'
+      - '1616:1616'
+  vbsserver:
+    stdin_open: true
+    tty: true
+    container_name: ${PROJECT_FOLDER}_tomcat_vbs
+    image: 'base_tomcat_vcs:3.0'
+    ports:
+      - '923:22'
+      - '9080:8080'
+      - '8001:8000'
+    volumes:
+      - '/docker_resources/${PROJECT_FOLDER}/tomcat_config:/config'
+      - '/docker_resources/${PROJECT_FOLDER}/webapps:/webapps'
+      - '/docker_resources/${PROJECT_FOLDER}/tomcat-server.xml:/usr/local/tomcat/conf/server.xml'
+    environment:
+      - 'DISPLAY=:0.0'
+      - ROOT_PWD=pcmsadmin
+      - CONFIG_FILE=/config/tomcat_vcs.json
+      - WEBAPP_LOCATION=/webapps
+      - JVM_MIN_HEAP=${TOMCAT_MEM_MIN}
+      - JVM_MAX_HEAP=${TOMCAT_MEM_MAX}
+  pos1:
+    hostname: ${POS1_CLIENT_HARDWARE_ID}                                    
+    stdin_open: true
+    tty: true
+    container_name: ${PROJECT_FOLDER}_pos
+    command:
+      - db2start
+    image: 'base_db2_11_ubuntu_pos:2.0'
+    ports:
+      - '5900:5900'
+      - '924:22'
+      - '8051:51000'
+    volumes:
+      - '/docker_resources/${PROJECT_FOLDER}/pos:/pos-resources'
+    environment:
+      - 'DISPLAY=:1'
+      - RES=${POS1_CLIENT_RESOLUTION}
+      - POSID=${POS1_CLIENT_HARDWARE_ID}
+      - DB2INST1_PASSWORD=pcmss3cr3t
+      - LICENSE=accept
+      - ROOT_PWD=pcmsadmin
+      - SWT_GTK3=0
+      - CONFIG_FILE=/pos-resources/pos_config.json
+      - BEANSTORE_INSTALL_LOCATION=/beanstore/
+      - POS_CLIENT_LOCATION=/pos-resources/beanstore-client.zip
+      - POS_OVERRIDES_LOCATION=/pos-resources/overrides/
