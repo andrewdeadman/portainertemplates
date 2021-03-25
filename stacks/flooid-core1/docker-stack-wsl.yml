@@ -11,7 +11,7 @@ services:
       - '8050:51000'
       - '922:22'
     volumes:
-      - '/mnt/c/docker_resources/${PROJECT_FOLDER}/db:/db-resources'
+      - '/mnt/host/c/docker_resources/${PROJECT_FOLDER}/db:/db-resources'
     environment:
       - DB2INST1_PASSWORD=pcmss3cr3t
       - ROOT_PWD=pcmsadmin
@@ -47,9 +47,9 @@ services:
       - '9080:8080'
       - '8001:8000'
     volumes:
-      - '/mnt/c/docker_resources/${PROJECT_FOLDER}/tomcat_config:/config'
-      - '/mnt/c/docker_resources/${PROJECT_FOLDER}/webapps:/webapps'
-      - '/mnt/c/docker_resources/${PROJECT_FOLDER}/tomcat-server.xml:/usr/local/tomcat/conf/server.xml'
+      - '/mnt/host/c/docker_resources/${PROJECT_FOLDER}/tomcat_config:/config'
+      - '/mnt/host/c/docker_resources/${PROJECT_FOLDER}/webapps:/webapps'
+      - '/mnt/host/c/docker_resources/${PROJECT_FOLDER}/tomcat-server.xml:/usr/local/tomcat/conf/server.xml'
     environment:
       - 'DISPLAY=:0.0'
       - ROOT_PWD=pcmsadmin
@@ -70,7 +70,7 @@ services:
       - '924:22'
       - '8051:51000'
     volumes:
-      - '/mnt/c/docker_resources/${PROJECT_FOLDER}/pos:/pos-resources'
+      - '/mnt/host/c/docker_resources/${PROJECT_FOLDER}/pos:/pos-resources'
     environment:
       - 'DISPLAY=:1'
       - RES=${POS1_CLIENT_RESOLUTION}
