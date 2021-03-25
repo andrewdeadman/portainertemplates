@@ -40,14 +40,14 @@
                 "default": "768m"
               },
               {
-                "name": "POS_CLIENT_HARDWARE_ID",
-                "label": "POS Client - Hardware ID",
+                "name": "POS1_CLIENT_HARDWARE_ID",
+                "label": "POS Client 1 - Hardware ID",
                 "description": "The DEVC_HARDWARE_ID to use for the POS application",
                 "default": "posclient1"
               },
               {
-                "name": "POS_CLIENT_RESOLUTION",
-                "label": "POS Client - Resolution",
+                "name": "POS1_CLIENT_RESOLUTION",
+                "label": "POS Client 1 - Resolution",
                 "description": "The resolution to use for the VNC window - e.g. 2390x768",
                 "default": "2390x768"
               }
@@ -92,14 +92,14 @@
                 "default": "768m"
               },
               {
-                "name": "POS_CLIENT_HARDWARE_ID",
-                "label": "POS Client - Hardware ID",
+                "name": "POS1_CLIENT_HARDWARE_ID",
+                "label": "POS Client 1 - Hardware ID",
                 "description": "The DEVC_HARDWARE_ID to use for the POS application",
                 "default": "posclient1"
               },
               {
-                "name": "POS_CLIENT_RESOLUTION",
-                "label": "POS Client - Resolution",
+                "name": "POS1_CLIENT_RESOLUTION",
+                "label": "POS Client 1 - Resolution",
                 "description": "The resolution to use for the VNC window - e.g. 2390x768",
                 "default": "2390x768"
               }
